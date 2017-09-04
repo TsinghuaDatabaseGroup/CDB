@@ -1,0 +1,4 @@
+## MySQL
+# MYSQL_SOURCE=jdbc:mysql://166.111.71.172:3306/crowddb_temp?useUnicode=true&amp;characterEncoding=UTF-8
+# USERNAME=crowddb
+# PASSWORD=crowddb!password

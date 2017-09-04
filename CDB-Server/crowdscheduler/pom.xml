@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>crowddb</artifactId>
+        <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+        <version>0.01</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+    <artifactId>crowdscheduler</artifactId>
+    <packaging>jar</packaging>
+
+    <name>crowdscheduler</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+            <artifactId>crowdcore</artifactId>
+            <version>0.01</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+            <artifactId>crowdsql</artifactId>
+            <version>0.01</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+            <artifactId>crowdexec</artifactId>
+            <version>0.01</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+            <artifactId>crowdplat</artifactId>
+            <version>0.01</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.54</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,14 @@
+*.iml
+*.pyc
+CDB-Assignment/main/migrations
+*.DS_Store
+CDB-Assignment/main/task/cf_temp/*
+CDB-Assignment/!main/task/cf_temp/.gitkeep
+.idea/
+CDB-Server/target/
+crowddb.iml
+*.log
+*.iml
+*.class
+*.jar
+CDB-Server/out/

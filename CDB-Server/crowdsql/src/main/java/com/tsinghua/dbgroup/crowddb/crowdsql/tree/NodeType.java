@@ -1,0 +1,26 @@
+package com.tsinghua.dbgroup.crowddb.crowdsql.tree;
+
+public enum NodeType {
+//    CROWD_GT,
+//    CROWD_GTE,
+//    CROWD_LT,
+    EXECUTE_SQL,
+    JOIN,
+    CROWD_EQ,
+    CROWD_JOIN,
+    CROWD_GT,
+    CROWD_LT,
+    CROWD_IN,
+    COLLECT,
+    FILL,
+    SINGLELABEL,
+    MULTILABEL,
+    EQ,
+    GT,
+    LT,
+    IN,
+    AND,
+    OR,
+    PROJECT,
+    GRAPH_MODEL,
+}

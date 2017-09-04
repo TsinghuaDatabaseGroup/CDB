@@ -1,0 +1,185 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+  <artifactId>crowddb</artifactId>
+  <version>0.01</version>
+  <modules>
+    <module>crowdexec</module>
+    <module>crowdplat</module>
+    <module>crowdsql</module>
+    <module>crowdscheduler</module>
+    <module>crowdstorage</module>
+    <module>crowdcore</module>
+  </modules>
+  <packaging>pom</packaging>
+  <!--<packaging>jar</packaging>-->
+  <name>crowddb</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>1.4.0.Final</version>
+      </extension>
+    </extensions>
+    <!--<sourceDirectory>src/main/scala</sourceDirectory>-->
+    <!-- testSourceDirectory>src/test/scala</testSourceDirectory -->
+    <plugins>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>com.tsinghua.dbgroup.crowddb.scheduler.Server</mainClass>
+          <arguments>
+            <argument>foo</argument>
+            <argument>bar</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.13</version>
+        <configuration>
+          <useFile>false</useFile>
+          <disableXmlReport>true</disableXmlReport>
+          <!-- If you have classpath issue like NoDefClassError,... -->
+          <!-- useManifestOnlyJar>false</useManifestOnlyJar -->
+          <includes>
+            <include>**/*Test.*</include>
+            <include>**/*Suite.*</include>
+          </includes>
+        </configuration>
+      </plugin>
+
+      <!-- "package" command plugin -->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4.1</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <!-- TO Define Main Class -->
+          <archive>
+            <manifest>
+              <mainClass>com.tsinghua.dbgroup.crowddb.scheduler.Server</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <!-- or whatever version you use -->
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- http://mvnrepository.com/artifact/log4j/log4j -->
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.1.3</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.1.3</version>
+    </dependency>
+    <!-- http://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.21</version>
+    </dependency>
+
+
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+        <artifactId>crowdscheduler</artifactId>
+        <version>0.01</version>
+      </dependency>
+      <dependency>
+        <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+        <artifactId>crowdexec</artifactId>
+        <version>0.01</version>
+      </dependency>
+      <dependency>
+        <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+        <artifactId>crowdplat</artifactId>
+        <version>0.01</version>
+      </dependency>
+      <dependency>
+        <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+        <artifactId>crowdsql</artifactId>
+        <version>0.01</version>
+      </dependency>
+      <dependency>
+        <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+        <artifactId>crowdstorage</artifactId>
+        <version>0.01</version>
+      </dependency>
+      <dependency>
+        <groupId>com.tsinghua.dbgroup.crowddb</groupId>
+        <artifactId>crowdcore</artifactId>
+        <version>0.01</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

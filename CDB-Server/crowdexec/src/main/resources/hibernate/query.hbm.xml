@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.tsinghua.dbgroup.crowddb.crowdexec.query.schema.Query" table="query">
+        <id name="Id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="sql" type="java.lang.String">
+            <column name="qsql" />
+        </property>
+        <property name="timestamp" type="java.lang.String">
+            <column name="timestamp" />
+        </property>
+        <property name="user" type="java.lang.Integer">
+            <column name="user_id" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" />
+        </property>
+        <property name="currentSQLNodeId" type="java.lang.Integer">
+            <column name="current_sqlnode_id" />
+        </property>
+        <property name="resultTable" type="java.lang.String">
+            <column name="result_table" />
+        </property>
+        <property name="dbName" type="java.lang.String">
+            <column name="db_name" />
+        </property>
+        <property name="errorMsg" type="java.lang.String">
+            <column name="error_message" />
+        </property>
+        <property name="gmodel" type="java.lang.Boolean">
+            <column name="gmodel" />
+        </property>
+    </class>
+</hibernate-mapping>
