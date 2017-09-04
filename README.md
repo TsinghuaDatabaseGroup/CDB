@@ -41,7 +41,7 @@ This module acts as a server to receive requests with well-formatted crowdsourci
 If you want to get the latest source code, please clone it from Github repo with the following command. 
 
 ```
-git clone http://dbgroup.cs.tsinghua.edu.cn:8081/wxping715/CDB.git
+git clone https://github.com/TsinghuaDatabaseGroup/CDB.git
 cd CDB
 ```
 
